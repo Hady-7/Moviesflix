@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.Trending();
+    console.log(this.trending);
+
   }
   Query(event: Event){
     this.query = (<HTMLInputElement>event.target).value;

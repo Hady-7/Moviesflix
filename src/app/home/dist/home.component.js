@@ -15,6 +15,7 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.Trending();
+        console.log(this.trending);
     };
     HomeComponent.prototype.Query = function (event) {
         this.query = event.target.value;
