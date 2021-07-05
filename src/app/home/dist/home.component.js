@@ -15,7 +15,9 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.Trending();
-        console.log(this.trending);
+        this.TopRated();
+        this.Popular();
+        this.Upcoming();
     };
     HomeComponent.prototype.Query = function (event) {
         this.query = event.target.value;
@@ -32,6 +34,24 @@ var HomeComponent = /** @class */ (function () {
         this.MoviesServ.gettrending().subscribe(function (res) {
             console.log(res);
             _this.trending = res;
+        });
+    };
+    HomeComponent.prototype.TopRated = function () {
+        var _this = this;
+        this.MoviesServ.getTopRated().subscribe(function (res) {
+            _this.topRated = res;
+        });
+    };
+    HomeComponent.prototype.Popular = function () {
+        var _this = this;
+        this.MoviesServ.popular().subscribe(function (res) {
+            _this.popular = res;
+        });
+    };
+    HomeComponent.prototype.Upcoming = function () {
+        var _this = this;
+        this.MoviesServ.upcoming().subscribe(function (res) {
+            _this.upComing = res;
         });
     };
     HomeComponent = __decorate([
