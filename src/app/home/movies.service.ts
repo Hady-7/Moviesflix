@@ -23,4 +23,10 @@ export class MoviesService {
   upcoming(){
     return this.http.get('https://api.themoviedb.org/3/movie/upcoming?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US&page=1')
   }
+  getDetails(id:any){
+    return this.http.get('https://api.themoviedb.org/3/movie/'+id+'?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US')
+  }
+  getsimilar(id:any){
+    return this.http.get('https://api.themoviedb.org/3/movie/'+id+'/similar?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US&page=1')
+  }
 }

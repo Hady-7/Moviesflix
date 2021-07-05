@@ -7,15 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var desc_component_1 = require("./home/desc/desc.component");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var home_component_1 = require("./home/home.component");
-var desc_component_1 = require("./desc/desc.component");
 var header_component_1 = require("./header/header.component");
 var http_1 = require("@angular/common/http");
+var forms_1 = require("@angular/forms");
+var common_1 = require("@angular/common");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,14 +26,16 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
-                desc_component_1.DescComponent,
-                header_component_1.HeaderComponent
+                header_component_1.HeaderComponent,
+                desc_component_1.DescComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 app_routing_module_1.AppRoutingModule,
                 ng_bootstrap_1.NgbModule,
                 http_1.HttpClientModule,
+                forms_1.FormsModule,
+                common_1.CommonModule,
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

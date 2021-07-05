@@ -27,6 +27,12 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.upcoming = function () {
         return this.http.get('https://api.themoviedb.org/3/movie/upcoming?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US&page=1');
     };
+    MoviesService.prototype.getDetails = function (id) {
+        return this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US');
+    };
+    MoviesService.prototype.getsimilar = function (id) {
+        return this.http.get('https://api.themoviedb.org/3/movie/' + id + '/similar?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US&page=1');
+    };
     MoviesService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

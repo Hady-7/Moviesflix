@@ -20,7 +20,7 @@
         <div class="card" *ngFor='let srch of search.results'>
           <img src="https://image.tmdb.org/t/p/w500/{{srch.poster_path}}" alt="">
           <p>{{srch.vote_average}}</p>
-          <button>view</button>
+          <button routerLink={{srch.id}}>view</button>
           <h4>{{srch.title}}</h4>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="card" *ngFor='let trend of trending.results'>
           <img src="https://image.tmdb.org/t/p/w500/{{trend.poster_path}}" alt="">
           <p>{{trend.vote_average}}</p>
-          <button>view</button>
+          <button routerLink={{trend.id}}>view</button>
           <h4>{{trend.title}}</h4>
         </div>
       </div>
@@ -42,7 +42,7 @@
         <div class="card" *ngFor='let top of topRated.results'>
           <img src="https://image.tmdb.org/t/p/w500/{{top.poster_path}}" alt="">
           <p>{{top.vote_average}}</p>
-          <button>view</button>
+          <button routerLink={{top.id}}>view</button>
           <h4>{{top.title}}</h4>
         </div>
       </div>
@@ -53,7 +53,7 @@
         <div class="card" *ngFor='let pop of popular.results'>
           <img src="https://image.tmdb.org/t/p/w500/{{pop.poster_path}}" alt="">
           <p>{{pop.vote_average}}</p>
-          <button>view</button>
+          <button routerLink={{pop.id}}>view</button>
           <h4>{{pop.title}}</h4>
         </div>
       </div>
@@ -64,7 +64,7 @@
         <div class="card" *ngFor='let up of upComing.results'>
           <img src="https://image.tmdb.org/t/p/w500/{{up.poster_path}}" alt="">
           <p>{{up.vote_average}}</p>
-          <button>view</button>
+          <button routerLink={{up.id}}>view</button>
           <h4>{{up.title}}</h4>
         </div>
       </div>

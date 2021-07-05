@@ -1,0 +1,28 @@
+<main>
+  <div class="wrapper">
+      <div class="layer">
+      <section id="sec1">
+          <div class="div1">
+            <img src="https://image.tmdb.org/t/p/w500/{{Details.poster_path}}" alt="">
+          </div>
+          <div class="div2">
+            <h1> {{Details.title}}</h1>
+            <p><span>overview </span>: {{Details.overview}}</p>
+            <p><span>IMDB </span>: {{Details.vote_average}}</p>
+            <button>play</button>
+          </div>
+      </section>
+      </div>
+      <section id="sec2" >
+        <h2>On trending</h2>
+        <div class="grid" >
+          <div class="card" *ngFor='let simi of similar.results'>
+            <img src="https://image.tmdb.org/t/p/w500/{{simi.poster_path}}" alt="">
+            <p>{{simi.vote_average}}</p>
+            <button (click)='navigate(simi.id)' routerLink= '{{simi.id }}'>view</button>
+            <h4>{{simi.title}}</h4>
+          </div>
+        </div>
+      </section>
+  </div>
+</main>
