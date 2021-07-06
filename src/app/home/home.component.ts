@@ -1,11 +1,10 @@
 import { MoviesService } from './movies.service';
-import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   trending:any;
@@ -14,14 +13,13 @@ export class HomeComponent implements OnInit {
   topRated:any;
   popular:any;
   upComing:any;
-  constructor(private MoviesServ:MoviesService,private http:HttpClientModule) { }
+  constructor(private MoviesServ:MoviesService) { }
 
   ngOnInit() {
     this.Trending();
     this.TopRated();
     this.Popular();
     this.Upcoming();
-
   }
   Query(event: Event){
     this.query = (<HTMLInputElement>event.target).value;

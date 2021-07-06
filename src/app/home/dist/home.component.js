@@ -9,9 +9,8 @@ exports.__esModule = true;
 exports.HomeComponent = void 0;
 var core_1 = require("@angular/core");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(MoviesServ, http) {
+    function HomeComponent(MoviesServ) {
         this.MoviesServ = MoviesServ;
-        this.http = http;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.Trending();

@@ -18,6 +18,7 @@ var header_component_1 = require("./header/header.component");
 var http_1 = require("@angular/common/http");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
+var ngx_scrollbar_1 = require("ngx-scrollbar");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -36,6 +37,7 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
                 common_1.CommonModule,
+                ngx_scrollbar_1.NgScrollbarModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

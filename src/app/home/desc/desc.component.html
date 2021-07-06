@@ -9,12 +9,15 @@
             <h1> {{Details.title}}</h1>
             <p><span>overview </span>: {{Details.overview}}</p>
             <p><span>IMDB </span>: {{Details.vote_average}}</p>
-            <button>play</button>
+            <iframe [src]="iframeurl" *ngIf="displayframe"  id="loginframe" allowfullscreen allow="autoplay"></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/{{vedios.results[0].key}}" [hidden]='play' #iframe ></iframe> -->
+            <button (click)="playing()">play</button>
+            <button (click)="closing()" *ngIf='displayframe'>close</button>
           </div>
       </section>
       </div>
-      <section id="sec2" >
-        <h2>On trending</h2>
+      <section id="sec2" *ngIf='similar'>
+        <h2>Similar Movies</h2>
         <div class="grid" >
           <div class="card" *ngFor='let simi of similar.results'>
             <img src="https://image.tmdb.org/t/p/w500/{{simi.poster_path}}" alt="">

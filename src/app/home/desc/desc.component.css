@@ -1,5 +1,7 @@
 main{
   background-color: rgb(12, 11, 11);
+  position: relative;
+  padding-bottom: 1em;
 }
 .wrapper{
   width: 95%;
@@ -12,6 +14,7 @@ main{
 }
 #sec1{
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -47,6 +50,7 @@ main{
   padding: 8px 25px;
   border: none;
   border-radius: 1em;
+  margin-right: .5em;
 }
 .div2 button:hover{
   transform: scale(1.1);
@@ -68,7 +72,6 @@ main{
   width: auto;
   overflow: auto;
   overflow-y: hidden;
-
 }
 .card{
   min-width: 327px;
@@ -124,3 +127,39 @@ main{
   padding-top: 1em;
 }
 
+/*iframe*/
+#loginframe{
+  height: 20%;
+  width: 30%;
+  position:
+  absolute;
+  top: 20vh;
+  left: 35%;
+  margin: auto;
+}
+/*scrollbar*/
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 4px;
+  border-radius: 1em;
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgb(20, 19, 19);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: #71e8f8;
+}
+#sec2:hover>::-webkit-scrollbar{
+  height: 10px;
+  border-radius: 2em;
+}
+#sec2:hover>::-webkit-scrollbar-thumb{
+  background-color: #81ecfa;
+  border-radius: 1em;
+}
+#sec2:hover>::-webkit-scrollbar-track{
+  border-radius: 1em;
+}

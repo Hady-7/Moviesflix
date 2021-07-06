@@ -9,10 +9,13 @@ exports.__esModule = true;
 exports.DescComponent = void 0;
 var core_1 = require("@angular/core");
 var DescComponent = /** @class */ (function () {
-    function DescComponent(route, Moviesserv, router) {
+    function DescComponent(route, Moviesserv, router, _sanitizer) {
         this.route = route;
         this.Moviesserv = Moviesserv;
         this.router = router;
+        this._sanitizer = _sanitizer;
+        this.play = false;
+        this.displayframe = false;
     }
     DescComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -21,6 +24,7 @@ var DescComponent = /** @class */ (function () {
         });
         this.details();
         this.Similar();
+        this.Vedios();
     };
     DescComponent.prototype.details = function () {
         var _this = this;
@@ -39,6 +43,23 @@ var DescComponent = /** @class */ (function () {
             window.location.replace(id);
         });
     };
+    DescComponent.prototype.Vedios = function () {
+        var _this = this;
+        this.Moviesserv.getvedios(this.id).subscribe(function (res) {
+            _this.vedios = res;
+            console.log(_this.vedios);
+        });
+    };
+    DescComponent.prototype.playing = function () {
+        this.iframeurl = this._sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.vedios.results[0].key + "?rel=0&amp;autoplay=1");
+        this.displayframe = true;
+    };
+    DescComponent.prototype.closing = function () {
+        this.displayframe = false;
+    };
+    __decorate([
+        core_1.ViewChild('iframe')
+    ], DescComponent.prototype, "iframe");
     DescComponent = __decorate([
         core_1.Component({
             selector: 'app-desc',

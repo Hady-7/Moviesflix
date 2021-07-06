@@ -17,7 +17,7 @@
     <section id="sec2" *ngIf='search'>
       <h2>Searching Results</h2>
       <div class="grid" >
-        <div class="card" *ngFor='let srch of search.results'>
+        <div class="card" *ngFor='let srch of search.results' >
           <img src="https://image.tmdb.org/t/p/w500/{{srch.poster_path}}" alt="">
           <p>{{srch.vote_average}}</p>
           <button routerLink={{srch.id}}>view</button>
