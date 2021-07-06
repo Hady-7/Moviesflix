@@ -39,7 +39,7 @@ var DescComponent = /** @class */ (function () {
         });
     };
     DescComponent.prototype.navigate = function (id) {
-        this.router.navigateByUrl(this.router.url.replace("" + this.id, id)).then(function () {
+        this.router.navigateByUrl(this.router.url.replace("" + this.id, "" + id)).then(function () {
             window.location.replace(id);
         });
     };

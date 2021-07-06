@@ -11,12 +11,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { TvComponent } from './tv/tv.component';
+import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    DescComponent
+    DescComponent,
+    TvComponent,
+    TvDescComponent
   ],
   imports: [
     BrowserModule,

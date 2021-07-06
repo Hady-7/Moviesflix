@@ -37,7 +37,7 @@ Similar(){
   })
 }
 navigate(id:any){
-  this.router.navigateByUrl(this.router.url.replace( `${this.id}` ,id)).then(() => {
+  this.router.navigateByUrl(this.router.url.replace( `${this.id}` ,`${id}`)).then(() => {
     window.location.replace(id);
   })
 }
@@ -54,4 +54,5 @@ playing(){
 closing(){
   this.displayframe=false;
 }
+
 }

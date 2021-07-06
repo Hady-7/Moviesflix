@@ -1,5 +1,6 @@
 import { MoviesService } from './movies.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   topRated:any;
   popular:any;
   upComing:any;
-  constructor(private MoviesServ:MoviesService) { }
+  constructor(private MoviesServ:MoviesService,private route:Router) { }
 
   ngOnInit() {
     this.Trending();
@@ -51,5 +52,8 @@ export class HomeComponent implements OnInit {
     this.MoviesServ.upcoming().subscribe ( res => {
       this.upComing = res;
     })
+  }
+  navi(id:any){
+    this.route.navigate([id]);
   }
 }

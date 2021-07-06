@@ -8,6 +8,7 @@
           <div class="div2">
             <h1> {{Details.title}}</h1>
             <p><span>overview </span>: {{Details.overview}}</p>
+            <p><span>Realase date </span>: {{Details.release_date}}</p>
             <p><span>IMDB </span>: {{Details.vote_average}}</p>
             <iframe [src]="iframeurl" *ngIf="displayframe"  id="loginframe" allowfullscreen allow="autoplay"></iframe>
             <!-- <iframe src="https://www.youtube.com/embed/{{vedios.results[0].key}}" [hidden]='play' #iframe ></iframe> -->
@@ -22,7 +23,7 @@
           <div class="card" *ngFor='let simi of similar.results'>
             <img src="https://image.tmdb.org/t/p/w500/{{simi.poster_path}}" alt="">
             <p>{{simi.vote_average}}</p>
-            <button (click)='navigate(simi.id)' routerLink= '{{simi.id }}'>view</button>
+            <button (click)='navigate(simi.id)' routerLink= 'home/{{simi.id }}'>view</button>
             <h4>{{simi.title}}</h4>
           </div>
         </div>

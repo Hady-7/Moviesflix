@@ -28,7 +28,7 @@
     <section id="sec2">
       <h2>On trending</h2>
       <div class="grid" >
-        <div class="card" *ngFor='let trend of trending.results'>
+        <div class="card" *ngFor='let trend of trending.results' (click)='navi(trend.id)'>
           <img src="https://image.tmdb.org/t/p/w500/{{trend.poster_path}}" alt="">
           <p>{{trend.vote_average}}</p>
           <button routerLink={{trend.id}}>view</button>

@@ -9,8 +9,9 @@ exports.__esModule = true;
 exports.HomeComponent = void 0;
 var core_1 = require("@angular/core");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(MoviesServ) {
+    function HomeComponent(MoviesServ, route) {
         this.MoviesServ = MoviesServ;
+        this.route = route;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.Trending();
@@ -52,6 +53,9 @@ var HomeComponent = /** @class */ (function () {
         this.MoviesServ.upcoming().subscribe(function (res) {
             _this.upComing = res;
         });
+    };
+    HomeComponent.prototype.navi = function (id) {
+        this.route.navigate([id]);
     };
     HomeComponent = __decorate([
         core_1.Component({
