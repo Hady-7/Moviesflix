@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TvservService } from './tvserv.service';
 
 @Component({
   selector: 'app-tv',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tv.component.css']
 })
 export class TvComponent implements OnInit {
+  toprated:any;
+  constructor(private tvserv:TvservService,private route:Router) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.topRated();
   }
+  topRated(){
+    this.tvserv.toprated().subscribe( res => {
+      this.toprated = res;
+      console.log(this.toprated);
 
+    })
+  }
+  navi(id:any){
+    this.route.navigate(['home/tv/'+id])
+  }
 }

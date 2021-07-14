@@ -19,6 +19,9 @@ var http_1 = require("@angular/common/http");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var ngx_scrollbar_1 = require("ngx-scrollbar");
+var tv_component_1 = require("./tv/tv.component");
+var tv_desc_component_1 = require("./tv/tv-desc/tv-desc.component");
+var auth_component_1 = require("./auth/auth.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -28,7 +31,10 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 header_component_1.HeaderComponent,
-                desc_component_1.DescComponent
+                desc_component_1.DescComponent,
+                tv_component_1.TvComponent,
+                tv_desc_component_1.TvDescComponent,
+                auth_component_1.AuthComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -37,7 +43,8 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
                 common_1.CommonModule,
-                ngx_scrollbar_1.NgScrollbarModule
+                ngx_scrollbar_1.NgScrollbarModule,
+                forms_1.ReactiveFormsModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

@@ -6,21 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.HeaderComponent = void 0;
+exports.AuthService = void 0;
 var core_1 = require("@angular/core");
-var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(router) {
-        this.router = router;
+var AuthService = /** @class */ (function () {
+    function AuthService(http) {
+        this.http = http;
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    AuthService.prototype.signup = function (pass, email) {
+        return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDl6AvJGTMwQ0IGBPW-2Q4Q6b1hi-C_jsM', {
+            password: pass,
+            email: email,
+            returnSecureToken: true
+        });
     };
-    HeaderComponent = __decorate([
-        core_1.Component({
-            selector: 'app-header',
-            templateUrl: './header.component.html',
-            styleUrls: ['./header.component.css']
+    AuthService = __decorate([
+        core_1.Injectable({
+            providedIn: 'root'
         })
-    ], HeaderComponent);
-    return HeaderComponent;
+    ], AuthService);
+    return AuthService;
 }());
-exports.HeaderComponent = HeaderComponent;
+exports.AuthService = AuthService;

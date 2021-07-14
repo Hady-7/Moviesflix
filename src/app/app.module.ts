@@ -8,11 +8,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { TvComponent } from './tv/tv.component';
 import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
+import { AuthComponent } from './auth/auth.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
     HeaderComponent,
     DescComponent,
     TvComponent,
-    TvDescComponent
+    TvDescComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

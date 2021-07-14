@@ -1,1 +1,30 @@
-<p>tv-desc works!</p>
+<main>
+  <div class="layer">
+    <section id="sec1">
+      <div class="div1">
+        <img src="https://image.tmdb.org/t/p/w500/{{detailsseries.poster_path}}" alt="">
+      </div>
+      <div class="div2">
+        <h1> {{detailsseries.original_name}}</h1>
+        <p><span>Overview </span>: {{detailsseries.overview}}</p>
+        <p><span>Seasons </span>: {{detailsseries.number_of_seasons}}</p>
+        <p><span>Episodes </span>: {{detailsseries.number_of_episodes}}</p>
+        <p><span>IMDB </span>: {{detailsseries.vote_average}}</p>
+        <iframe [src]="iframeurl" *ngIf="displayframe"  id="loginframe" allowfullscreen allow="autoplay"></iframe>
+        <button (click)="playing()">play</button>
+        <button (click)="closing()" *ngIf='displayframe'>close</button>
+      </div>
+  </section>
+  <section id="sec2" *ngIf='epigroup'>
+    <h2>epi </h2>
+    <div class="grid" >
+      <div class="card" *ngFor='let epi of epigroup.results'>
+        <img src="https://image.tmdb.org/t/p/w500/{{epi.poster_path}}" alt="">
+        <p>{{epi.vote_average}}</p>
+        <!-- <button (click)='navigate(simi.id)' routerLink= 'home/{{epigroup.id }}'>view</button> -->
+        <h4>{{epi.title}}</h4>
+      </div>
+    </div>
+  </section>
+  </div>
+</main>

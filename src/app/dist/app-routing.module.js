@@ -13,11 +13,13 @@ var desc_component_1 = require("./home/desc/desc.component");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var home_component_1 = require("./home/home.component");
+var auth_component_1 = require("./auth/auth.component");
 var routes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: ':id', component: desc_component_1.DescComponent },
     { path: 'tv', component: tv_component_1.TvComponent },
     { path: 'tv/:id', component: tv_desc_component_1.TvDescComponent },
+    { path: 'auth/sign', component: auth_component_1.AuthComponent },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
