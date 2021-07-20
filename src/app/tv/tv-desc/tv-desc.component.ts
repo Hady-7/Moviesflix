@@ -10,7 +10,6 @@ import { TvservService } from '../tvserv.service';
 })
 export class TvDescComponent implements OnInit {
 id:any;
-epigroup:any;
 detailsseries:any;
 vedios:any;
 iframeurl!:SafeResourceUrl;
@@ -21,7 +20,6 @@ displayframe=false;
     this.getid();
     this.getdetails();
     this.getvedios();
-    this.epgroup();
   }
   getid(){
   this.id =  this.router.snapshot.params['id'];
@@ -43,11 +41,5 @@ displayframe=false;
   closing(){
     this.displayframe=false;
   }
-  epgroup(){
-    this.tvserv.getep(this.id).subscribe(res =>{
-    this.epigroup = res;
-    console.log(this.epigroup);
 
-    })
-  }
 }

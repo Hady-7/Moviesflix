@@ -6,8 +6,8 @@
   outline: none;
 }
 main{
-background-color: rgb(0, 0, 0);
-padding-bottom: 3em;
+  background-image: linear-gradient(to right,RGB(11,14,22) ,RGB(8,11,19));
+  padding-bottom: 3em;
 }
 .grid{
   width: 98%;
@@ -15,10 +15,12 @@ padding-bottom: 3em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-color: transparent;
 }
 .card{
   width: 20%;
   margin: 1em;
+  border: 1px solid white;
   border-radius: 2em;
   color: transparent;
   transition: all 0.5s ease;
@@ -75,7 +77,7 @@ padding-bottom: 3em;
   color: rgb(247, 247, 247);
 }
 h1{
-  color:  #0fcbe4;
+  color:  rgb(255, 255, 255);
   font-weight: bold;
 }
 .header{
@@ -83,5 +85,36 @@ h1{
   padding: 1.5em;
   margin: auto;
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+/* search section*/
+.search{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  height: 5em;
+  padding-top: 2em;
+}
+.search input{
+  width: 50%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+}
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 18px;
 }

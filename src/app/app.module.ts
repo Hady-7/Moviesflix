@@ -14,6 +14,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { TvComponent } from './tv/tv.component';
 import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
 import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { AuthComponent } from './auth/auth.component';
     DescComponent,
     TvComponent,
     TvDescComponent,
-    AuthComponent
+    AuthComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

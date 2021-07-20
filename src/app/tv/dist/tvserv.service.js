@@ -21,8 +21,11 @@ var TvservService = /** @class */ (function () {
     TvservService.prototype.getvedios = function (id) {
         return this.http.get('https://api.themoviedb.org/3/tv/' + id + '/videos?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US');
     };
-    TvservService.prototype.getep = function (id) {
-        return this.http.get('https://api.themoviedb.org/3/tv/episode_group/' + id + '?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US');
+    TvservService.prototype.getSearch = function (query) {
+        return this.http.get('https://api.themoviedb.org/3/search/tv?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US&query=/' + query + '/&page=1&include_adult=false');
+    };
+    TvservService.prototype.getSeason = function (seasonNumber, id) {
+        return this.http.get('https://api.themoviedb.org/3/tv/' + id + '/season/' + seasonNumber + '?api_key=c1b95ab390b77067f0861b8787c1b672&language=en-US');
     };
     TvservService = __decorate([
         core_1.Injectable({

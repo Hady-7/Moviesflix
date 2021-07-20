@@ -9,10 +9,16 @@ import { TvservService } from './tvserv.service';
 })
 export class TvComponent implements OnInit {
   toprated:any;
+  query: any;
+  search:any;
+
   constructor(private tvserv:TvservService,private route:Router) { }
 
   ngOnInit() {
     this.topRated();
+  }
+  Query(event: Event){
+    this.query = (<HTMLInputElement>event.target).value;
   }
   topRated(){
     this.tvserv.toprated().subscribe( res => {
@@ -22,6 +28,13 @@ export class TvComponent implements OnInit {
     })
   }
   navi(id:any){
-    this.route.navigate(['home/tv/'+id])
+    this.route.navigate(['home/tv/'+id]);
   }
+  Search(){
+    this.tvserv.getSearch(this.query).subscribe( res => {
+      this.search = res;
+      console.log(this.search);
+    })
+  }
+
 }

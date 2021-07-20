@@ -3,7 +3,7 @@
 .signin{
   display: flex;
   flex-wrap: wrap;
-  background-image: url(../../assets/images/wp7337255-game-of-thrones-poster-wallpapers.jpg);
+  background-image: url(../../../assets/images/wp7337255-game-of-thrones-poster-wallpapers.jpg);
   background-position: center;
   height: 92.2vh;
 }
@@ -14,7 +14,7 @@
   align-items: center;
 }
 .signin .formgroup{
-  width: 30%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -28,7 +28,7 @@
   padding-bottom: .2em;
 }
 .signin div input{
-  margin: .3em 0;
+  margin: .5em 0;
   border-radius: .2em;
   outline: none;
   border: none;

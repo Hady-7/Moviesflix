@@ -19,7 +19,6 @@ var TvDescComponent = /** @class */ (function () {
         this.getid();
         this.getdetails();
         this.getvedios();
-        this.epgroup();
     };
     TvDescComponent.prototype.getid = function () {
         this.id = this.router.snapshot.params['id'];
@@ -42,13 +41,6 @@ var TvDescComponent = /** @class */ (function () {
     };
     TvDescComponent.prototype.closing = function () {
         this.displayframe = false;
-    };
-    TvDescComponent.prototype.epgroup = function () {
-        var _this = this;
-        this.tvserv.getep(this.id).subscribe(function (res) {
-            _this.epigroup = res;
-            console.log(_this.epigroup);
-        });
     };
     TvDescComponent = __decorate([
         core_1.Component({

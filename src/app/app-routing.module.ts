@@ -1,3 +1,4 @@
+import { LoginComponent } from './auth/login/login.component';
 import { TvDescComponent } from './tv/tv-desc/tv-desc.component';
 import { TvComponent } from './tv/tv.component';
 import { DescComponent } from './home/desc/desc.component';
@@ -12,8 +13,8 @@ const routes: Routes = [
   {path: 'home/tv' , component:TvComponent },
   {path: 'home/tv/:id' , component:TvDescComponent},
   {path: 'auth/sign' , component:AuthComponent},
+  {path: 'auth/login' , component:LoginComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

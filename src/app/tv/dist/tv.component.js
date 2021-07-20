@@ -16,6 +16,9 @@ var TvComponent = /** @class */ (function () {
     TvComponent.prototype.ngOnInit = function () {
         this.topRated();
     };
+    TvComponent.prototype.Query = function (event) {
+        this.query = event.target.value;
+    };
     TvComponent.prototype.topRated = function () {
         var _this = this;
         this.tvserv.toprated().subscribe(function (res) {
@@ -25,6 +28,13 @@ var TvComponent = /** @class */ (function () {
     };
     TvComponent.prototype.navi = function (id) {
         this.route.navigate(['home/tv/' + id]);
+    };
+    TvComponent.prototype.Search = function () {
+        var _this = this;
+        this.tvserv.getSearch(this.query).subscribe(function (res) {
+            _this.search = res;
+            console.log(_this.search);
+        });
     };
     TvComponent = __decorate([
         core_1.Component({
