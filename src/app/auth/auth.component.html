@@ -1,12 +1,12 @@
 <section class="signin">
     <div class="layer">
-        <form class="formgroup" >
+        <form class="formgroup" (ngSubmit)='onSubmit(f)' #f='ngForm'>
               <h1>Sign up</h1>
-              <input type="text" name="username" placeholder="firstname">
-              <input type="text" name="lastname" placeholder="lastname">
-              <input type="email" name="email" placeholder="email">
-              <input type="password" name="password" placeholder="password">
-              <button type="submit">submit</button>
+              <input type="email" name="email" placeholder="email" ngModel required email #email='ngModel'>
+              <span *ngIf='!email.valid && email.touched' class="error">Enter valid email</span>
+              <input type="password" name="password" placeholder="password" ngModel required #password='ngModel'>
+              <span *ngIf='!password.valid && password.touched' class="error">Enter valid password</span>
+              <button type="submit" [disabled]='!f.valid'>submit</button>
               <span>Already on MOVIESFLIX ?<a routerLink='../../auth/login'>Login</a></span>
         </form>
     </div>

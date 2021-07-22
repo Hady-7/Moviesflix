@@ -6,32 +6,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.AuthComponent = void 0;
+exports.LoginComponent = void 0;
 var core_1 = require("@angular/core");
-var AuthComponent = /** @class */ (function () {
-    function AuthComponent(Authserv) {
-        this.Authserv = Authserv;
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(signserv) {
+        this.signserv = signserv;
     }
-    AuthComponent.prototype.ngOnInit = function () {
+    LoginComponent.prototype.ngOnInit = function () {
     };
-    AuthComponent.prototype.onSubmit = function (form) {
+    LoginComponent.prototype.onSubmit = function (form) {
         if (!form.valid) {
             return;
         }
         var email = form.value.email;
         var password = form.value.password;
-        this.Authserv.signup(email, password).subscribe(function (res) {
+        this.signserv.signin(email, password).subscribe(function (res) {
             console.log(res);
         });
         form.reset();
     };
-    AuthComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            selector: 'app-auth',
-            templateUrl: './auth.component.html',
-            styleUrls: ['./auth.component.css']
+            selector: 'app-login',
+            templateUrl: './login.component.html',
+            styleUrls: ['./login.component.css']
         })
-    ], AuthComponent);
-    return AuthComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.AuthComponent = AuthComponent;
+exports.LoginComponent = LoginComponent;

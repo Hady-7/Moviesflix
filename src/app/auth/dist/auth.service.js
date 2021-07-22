@@ -12,10 +12,17 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
     }
-    AuthService.prototype.signup = function (pass, email) {
+    AuthService.prototype.signup = function (mail, pass) {
         return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDl6AvJGTMwQ0IGBPW-2Q4Q6b1hi-C_jsM', {
+            email: mail,
             password: pass,
+            returnSecureToken: true
+        });
+    };
+    AuthService.prototype.signin = function (email, pass) {
+        return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDl6AvJGTMwQ0IGBPW-2Q4Q6b1hi-C_jsM', {
             email: email,
+            password: pass,
             returnSecureToken: true
         });
     };

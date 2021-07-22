@@ -35,17 +35,26 @@
   padding: .3em;
   padding-left: .5em;
 }
+
+.signin div input.ng-invalid.ng-touched{
+  border: 3px solid rgb(255, 0, 0);
+}
 .signin button{
-  background-color: RGB(11,113,217);
+  background-color:#48cae4;
   color: rgb(255, 255, 255);
   border-radius: 2em;
   border: none;
   padding: .3em;
   margin: .3em 0;
 }
-.signin button:hover{
-  transform: scale(1.05);
+.signin button:valid{
+  background-color: RGB(11,113,217);
 }
 .signin span{
   color: rgb(255, 255, 255);
+}
+.error{
+  color: rgb(255, 0, 0) !important;
+  padding-left: .5em;
+  text-align: left;
 }
