@@ -3,9 +3,8 @@
       <form class="formgroup" (ngSubmit)='onSubmit(f)' #f='ngForm'>
             <h1>Login</h1>
             <input type="email" name="email" placeholder="email" ngModel required #email='ngModel'>
-            <span *ngIf='!email.valid && email.touched' class="error">Enter valid name</span>
             <input type="password" name="password" placeholder="password" ngModel required #password='ngModel'>
-            <span *ngIf='!password.valid && password.touched' class="error">Enter valid name</span>
+            <div class="error" *ngIf='error'><span style="color: red;">{{ error }}</span></div>
             <button type="submit" [disabled]='!f.valid'>Login</button>
             <span>New on MOVIESFLIX ?<a routerLink='../../auth/sign'>signup</a></span>
       </form>

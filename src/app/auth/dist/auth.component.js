@@ -9,12 +9,14 @@ exports.__esModule = true;
 exports.AuthComponent = void 0;
 var core_1 = require("@angular/core");
 var AuthComponent = /** @class */ (function () {
-    function AuthComponent(Authserv) {
+    function AuthComponent(Authserv, route) {
         this.Authserv = Authserv;
+        this.route = route;
     }
     AuthComponent.prototype.ngOnInit = function () {
     };
     AuthComponent.prototype.onSubmit = function (form) {
+        var _this = this;
         if (!form.valid) {
             return;
         }
@@ -22,6 +24,12 @@ var AuthComponent = /** @class */ (function () {
         var password = form.value.password;
         this.Authserv.signup(email, password).subscribe(function (res) {
             console.log(res);
+            _this.route.navigate(['']);
+        }, function (err) {
+            switch (err.error.error.message) {
+                case 'EMAIL_EXISTS':
+                    _this.error = 'this email exists already';
+            }
         });
         form.reset();
     };

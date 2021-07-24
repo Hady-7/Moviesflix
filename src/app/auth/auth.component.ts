@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
@@ -8,7 +9,8 @@ import { AuthService } from './auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  constructor(private Authserv:AuthService) { }
+error!:any;
+  constructor(private Authserv:AuthService,private route : Router) { }
 
   ngOnInit() {
 
@@ -21,7 +23,14 @@ export class AuthComponent implements OnInit {
     const password = form.value.password;
     this.Authserv.signup(email,password).subscribe( res => {
       console.log(res);
-    });
+      this.route.navigate(['']);
+    },err => {
+      switch (err.error.error.message){
+        case 'EMAIL_EXISTS':
+          this.error = 'this email exists already'
+      }
+     }
+    );
     form.reset();
 }
 }

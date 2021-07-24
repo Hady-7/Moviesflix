@@ -9,10 +9,14 @@ exports.__esModule = true;
 exports.HeaderComponent = void 0;
 var core_1 = require("@angular/core");
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(router) {
-        this.router = router;
+    function HeaderComponent() {
+        this.login = true;
+        this.logout = false;
     }
     HeaderComponent.prototype.ngOnInit = function () {
+    };
+    HeaderComponent.prototype["switch"] = function () {
+        this.login = false;
     };
     HeaderComponent = __decorate([
         core_1.Component({

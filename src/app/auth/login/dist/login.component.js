@@ -9,12 +9,14 @@ exports.__esModule = true;
 exports.LoginComponent = void 0;
 var core_1 = require("@angular/core");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(signserv) {
+    function LoginComponent(signserv, route) {
         this.signserv = signserv;
+        this.route = route;
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
     LoginComponent.prototype.onSubmit = function (form) {
+        var _this = this;
         if (!form.valid) {
             return;
         }
@@ -22,6 +24,16 @@ var LoginComponent = /** @class */ (function () {
         var password = form.value.password;
         this.signserv.signin(email, password).subscribe(function (res) {
             console.log(res);
+            _this.route.navigate(['']);
+        }, function (err) {
+            switch (err.error.error.message) {
+                case 'EMAIL_NOT_FOUND':
+                    _this.error = 'this email not exists';
+                    break;
+                case 'INVALID_PASSWORD':
+                    _this.error = 'Wrong password';
+                    break;
+            }
         });
         form.reset();
     };
