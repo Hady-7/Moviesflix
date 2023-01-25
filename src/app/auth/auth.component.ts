@@ -23,7 +23,7 @@ error!:any;
     const password = form.value.password;
     this.Authserv.signup(email,password).subscribe( res => {
       console.log(res);
-      this.route.navigate(['']);
+      this.route.navigate(['auth/login']);
     },err => {
       switch (err.error.error.message){
         case 'EMAIL_EXISTS':
